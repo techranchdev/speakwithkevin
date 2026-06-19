@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kevin Koym — Global Catalyst · Async voice</title>
+<meta name="description" content="Kevin Koym is a global catalyst. One-to-one coaching for a disruptive result, by async voice. No calendars, no forms — just voice, the moment the decision is hot." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,700;0,800;1,400;1,600&family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#111917;
+    --ink-2:#18221F;
+    --ink-3:#212C28;
+    --line:rgba(236,228,212,0.14);
+    --line-strong:rgba(236,228,212,0.28);
+    --bone:#ECE4D4;
+    --sage:#9AA89C;
+    --ember:#E8743B;
+    --ember-ink:#2A1206;
+    --serif:'Spectral',Georgia,serif;
+    --sans:'Hanken Grotesk',system-ui,sans-serif;
+    --mono:'Space Mono',ui-monospace,monospace;
+    --r:10px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--ink);color:var(--bone);
+    font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  p{margin:0 0 1rem;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ember);margin:0 0 18px;}
+  .eyebrow.dim{color:var(--sage);}
+  .lead{font-size:19px;color:var(--sage);max-width:60ch;}
+  .section{padding:96px 0;border-top:1px solid var(--line);}
+  .section h2{font-size:clamp(1.9rem,3.6vw,2.9rem);max-width:18ch;}
+  .ember{color:var(--ember);}
+  .serif-em{font-family:var(--serif);font-style:italic;font-weight:600;}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:500;font-size:15px;
+    padding:13px 22px;border-radius:var(--r);border:1px solid var(--line-strong);color:var(--bone);
+    transition:transform .15s ease,background .15s ease,border-color .15s ease;cursor:pointer;background:transparent;}
+  .btn:hover{background:var(--ink-2);border-color:var(--bone);}
+  .btn:active{transform:scale(.985);}
+  .btn-primary{background:var(--ember);border-color:var(--ember);color:var(--ember-ink);font-weight:700;}
+  .btn-primary:hover{background:#f0834d;border-color:#f0834d;}
+  :focus-visible{outline:2px solid var(--ember);outline-offset:3px;}
+
+  /* top bar */
+  header{position:sticky;top:0;z-index:50;background:rgba(17,25,23,0.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .logo{font-family:var(--serif);font-weight:800;font-size:23px;letter-spacing:0.02em;}
+  .logo span{color:var(--ember);}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-links a{font-size:14.5px;color:var(--sage);transition:color .15s;}
+  .nav-links a:hover{color:var(--bone);}
+  .nav .btn{padding:10px 18px;}
+  .menu-toggle{display:none;background:none;border:none;color:var(--bone);font-size:24px;cursor:pointer;}
+
+  /* hero */
+  .hero{padding:88px 0 76px;position:relative;overflow:hidden;}
+  .hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem);font-weight:800;max-width:16ch;}
+  .hero .sub-serif{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--sage);margin-top:10px;max-width:24ch;line-height:1.15;}
+  .hero .lead{margin:28px 0 0;font-size:19px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .waveform{display:flex;align-items:center;gap:3px;height:40px;margin:46px 0 30px;}
+  .waveform i{display:block;width:3px;border-radius:2px;background:var(--ember);opacity:.55;}
+  .recorder{margin:30px 0 26px;max-width:540px;}
+  .recorder iframe{width:100%;height:172px;border:1px solid var(--line-strong);border-radius:var(--r);background:var(--ink-2);display:block;}
+  .rec-note{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;color:var(--sage);margin:12px 0 0;}
+  .stats{display:flex;flex-wrap:wrap;gap:36px 54px;margin-top:18px;border-top:1px solid var(--line);padding-top:30px;}
+  .stat .n{font-family:var(--serif);font-weight:700;font-size:34px;line-height:1;}
+  .stat .l{font-family:var(--mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-top:8px;}
+
+  /* credibility strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2);}
+  .strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding-top:20px;padding-bottom:20px;}
+  .strip .label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+  .strip .item{font-family:var(--mono);font-size:13px;letter-spacing:0.05em;color:var(--bone);opacity:.85;}
+
+  /* tenets */
+  .tenets{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:48px;}
+  .tenet{background:var(--ink);padding:30px 28px;}
+  .tenet .t{font-family:var(--serif);font-weight:700;font-size:1.32rem;margin-bottom:8px;}
+  .tenet .d{color:var(--sage);font-size:15.5px;margin:0;}
+
+  /* two ways */
+  .ways{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px;}
+  .way{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--ink-2);}
+  .way.good{border-color:rgba(232,116,59,0.45);}
+  .way h3{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:20px;}
+  .way.good h3{color:var(--ember);}
+  .beat{display:flex;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:15px;}
+  .beat:first-of-type{border-top:none;}
+  .beat time{font-family:var(--mono);font-size:12px;color:var(--sage);min-width:52px;padding-top:2px;}
+  .way .tally{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-strong);font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;color:var(--sage);}
+  .way.good .tally{color:var(--ember);}
+
+  /* offers */
+  .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;}
+  .offer{border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;background:var(--ink-2);display:flex;flex-direction:column;}
+  .offer.flag{border-color:var(--ember);background:var(--ink-3);}
+  .offer .tag{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+  .offer.flag .tag{color:var(--ember);}
+  .offer h3{font-size:1.5rem;margin-bottom:6px;}
+  .offer .role{font-family:var(--serif);font-style:italic;color:var(--sage);margin-bottom:14px;}
+  .offer p{font-size:15.5px;color:var(--sage);}
+  .offer .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 22px;}
+  .offer .pill{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--bone);border:1px solid var(--line);border-radius:999px;padding:5px 11px;}
+  .offer .price{font-family:var(--serif);font-size:1.15rem;color:var(--bone);margin-bottom:18px;}
+  .offer .price b{font-weight:700;}
+  .offer .spacer{flex:1;}
+  .offer .btn{align-self:flex-start;}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+  .step{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--ink);}
+  .step .num{font-family:var(--mono);font-size:13px;color:var(--ember);letter-spacing:0.1em;margin-bottom:16px;}
+  .step h3{font-size:1.3rem;margin-bottom:8px;}
+  .step p{font-size:15px;color:var(--sage);margin:0;}
+  .step .when{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-top:16px;display:block;}
+
+  /* fit */
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px;}
+  .fit-col{border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;background:var(--ink-2);}
+  .fit-col h3{font-family:var(--mono);font-weight:700;font-size:12.5px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:20px;}
+  .fit-col.yes h3{color:var(--ember);}
+  .fit-col.no h3{color:var(--sage);}
+  .fit-col ul{list-style:none;margin:0;padding:0;}
+  .fit-col li{padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--bone);display:flex;gap:12px;}
+  .fit-col li:first-child{border-top:none;}
+  .fit-col .mk{color:var(--ember);flex-shrink:0;}
+  .fit-col.no .mk{color:var(--sage);}
+
+  /* bio */
+  .bio{display:grid;grid-template-columns:1fr 1.3fr;gap:54px;align-items:start;}
+  .bio-photo{aspect-ratio:4/5;border-radius:var(--r);border:1px solid var(--line-strong);background:var(--ink-3);display:flex;align-items:center;justify-content:center;text-align:center;}
+  .bio-photo span{font-family:var(--mono);font-size:12px;color:var(--sage);letter-spacing:0.1em;padding:0 20px;}
+  .bio p{font-size:17px;}
+  .bio .ministats{display:flex;gap:32px;margin-top:24px;flex-wrap:wrap;}
+  .bio .ministats .n{font-family:var(--serif);font-weight:700;font-size:26px;}
+  .bio .ministats .l{font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-top:4px;}
+
+  /* proof */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+  .quote{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--ink-2);}
+  .quote p{font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--bone);}
+  .quote .who{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);margin-top:14px;}
+
+  /* newsletter */
+  .news{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:48px 40px;margin-top:10px;}
+  .news h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .news form{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;max-width:520px;}
+  .news input{flex:1;min-width:220px;background:var(--ink);border:1px solid var(--line-strong);border-radius:var(--r);color:var(--bone);font-family:var(--sans);font-size:15px;padding:13px 16px;}
+  .news input::placeholder{color:var(--sage);}
+  .news .note{font-family:var(--mono);font-size:11.5px;letter-spacing:0.06em;color:var(--sage);margin-top:16px;}
+
+  /* faq */
+  .faq{margin-top:40px;border-top:1px solid var(--line);}
+  .qa{border-bottom:1px solid var(--line);}
+  .qa button{width:100%;text-align:left;background:none;border:none;color:var(--bone);font-family:var(--serif);font-weight:700;font-size:1.25rem;padding:24px 0;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;}
+  .qa button .ic{color:var(--ember);font-family:var(--sans);font-size:24px;font-weight:400;transition:transform .2s;flex-shrink:0;}
+  .qa.open button .ic{transform:rotate(45deg);}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+  .qa .ans p{color:var(--sage);font-size:16px;padding-bottom:24px;margin:0;max-width:70ch;}
+
+  /* final */
+  .final{text-align:center;padding:110px 0;border-top:1px solid var(--line);}
+  .final h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:0 auto;max-width:16ch;}
+  .final .waveform{justify-content:center;margin:36px auto 30px;}
+  .final .btn{margin-top:6px;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);background:var(--ink-2);padding:46px 0;}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;}
+  footer .logo{font-size:20px;}
+  footer .flinks{display:flex;flex-wrap:wrap;gap:22px;font-family:var(--mono);font-size:12.5px;letter-spacing:0.05em;color:var(--sage);}
+  footer .flinks a:hover{color:var(--bone);}
+  footer .fine{font-family:var(--mono);font-size:11px;color:var(--sage);width:100%;letter-spacing:0.05em;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .tenets,.ways,.offers,.steps,.fit,.bio,.quotes{grid-template-columns:1fr;}
+    .bio{gap:32px;}
+    .section{padding:72px 0;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <!-- PLACEHOLDER: replace text logotype with final logo asset -->
+    <a href="#top" class="logo">KOYM<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#work">Work with me</a>
+      <a href="#outfitter">Venture Outfitter</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <!-- PLACEHOLDER: Carbon Voice link — confirm handle (cv.chat/kkoym vs kevinkoym) -->
+    <a class="btn btn-primary" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Send a voice note</a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display='flex'">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Global catalyst · Async voice · 42 countries</p>
+      <h1>Tell me where you're trying to grow.</h1>
+      <p class="sub-serif">I'll tell you what I see — and who you need.</p>
+      <p class="lead">I'm Kevin Koym — a global catalyst who's spent thirty years and 6,500 founders turning connection into coordinated action, and personal revolutions into disruptive results. No calendars. No forms. Just voice, the moment the decision is hot.</p>
+      <div class="waveform" id="heroWave" aria-hidden="true"></div>
+      <div class="recorder">
+        <iframe src="https://embed.carbonvoice.app/s/KWvq2kV0cKj9dG3k" title="Send Kevin a voice note" loading="lazy" allow="microphone"></iframe>
+        <p class="rec-note">Free · press and hold to record · reply within 12 hours</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Send a voice note</a>
+        <a class="btn" href="#work">See how we work</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">6,500+</div><div class="l">Entrepreneurs guided</div></div>
+        <div class="stat"><div class="n">42</div><div class="l">Countries</div></div>
+        <div class="stat"><div class="n">&lt;12h</div><div class="l">Typical reply</div></div>
+        <div class="stat"><div class="n">30 yrs</div><div class="l">In the field</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <span class="label">Three decades in the field</span>
+      <!-- PLACEHOLDER: confirm / add credibility marks and logos as they're gathered -->
+      <span class="item">NeXT · with Steve Jobs</span>
+      <span class="item">Dell e-commerce engine</span>
+      <span class="item">TEDx speaker</span>
+      <span class="item">UT Austin</span>
+      <span class="item">UBI Global Top-3 social-impact incubator</span>
+    </div>
+  </div>
+
+  <!-- THESIS -->
+  <section class="section" id="thesis">
+    <div class="wrap">
+      <p class="eyebrow">What I believe</p>
+      <h2>Bridges over business cards.</h2>
+      <p class="lead">Networking gives you contacts. Growth comes from the right connection, at the right moment, made by someone who understands how the whole system fits together. That's the work — and it can't wait for Thursday at 3.</p>
+      <div class="tenets">
+        <div class="tenet"><div class="t">Bridges over business cards</div><p class="d">Connection only matters when it becomes coordinated action.</p></div>
+        <div class="tenet"><div class="t">The answer already exists</div><p class="d">Somewhere in 42 countries, someone has solved this. My work is knowing where — and connecting you to it.</p></div>
+        <div class="tenet"><div class="t">Trust before transaction</div><p class="d">We talk first. I'm not running a meter on the relationship.</p></div>
+        <div class="tenet"><div class="t">Voice, not forms</div><p class="d">Nuance and trust live in how you say it, not in a contact field.</p></div>
+        <div class="tenet"><div class="t">I see the system; Tech Ranch builds it</div><p class="d">Strategy and connection from me; programs and execution through the Ranch.</p></div>
+        <div class="tenet"><div class="t">The inner and outer are one road</div><p class="d">The venture you build and the person you become are the same work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO WAYS -->
+  <section class="section" id="contrast">
+    <div class="wrap">
+      <p class="eyebrow dim">A hard Tuesday, two ways</p>
+      <h2>Scheduling the breakthrough vs. <span class="ember">sending the note.</span></h2>
+      <div class="ways">
+        <div class="way">
+          <h3>The calendar way</h3>
+          <div class="beat"><time>7:14</time><div>Co-founder wants out. You sit on it.</div></div>
+          <div class="beat"><time>9:30</time><div>Email your advisor. Wait for a slot.</div></div>
+          <div class="beat"><time>12:00</time><div>Draft messages. Delete them. Spiral.</div></div>
+          <div class="beat"><time>18:30</time><div>Finally talk. Twenty minutes of context-dump.</div></div>
+          <div class="beat"><time>22:00</time><div>Still turning it over in bed.</div></div>
+          <div class="tally">Decisions made: 0 · Days lost: 1</div>
+        </div>
+        <div class="way good">
+          <h3>The voice way</h3>
+          <div class="beat"><time>7:16</time><div>Voice note to Kevin: "Co-founder wants out."</div></div>
+          <div class="beat"><time>8:40</time><div>Reply: two questions, one frame, one intro.</div></div>
+          <div class="beat"><time>9:10</time><div>You answer while making coffee.</div></div>
+          <div class="beat"><time>10:30</time><div>"Do this. Delay that. Here's who to call."</div></div>
+          <div class="beat"><time>14:00</time><div>You ship the plan. The line stays open.</div></div>
+          <div class="tally">Decisions made: 4 · Total talk time: 9 min</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow">Ways to work together</p>
+      <h2>Four ways to plug in.</h2>
+      <div class="offers">
+
+        <div class="offer flag" id="breakthrough">
+          <div class="tag">Flagship · 1:1</div>
+          <h3>Breakthrough</h3>
+          <div class="role">Driving a personal revolution</div>
+          <p>One-to-one coaching for a disruptive result, by async voice. For founders — and for leaders driving change inside a larger organization. Sometimes it grows into a corporate Skunk Works, but it always stays a relationship between you and me.</p>
+          <div class="meta"><span class="pill">1:1</span><span class="pill">Async voice</span><span class="pill">Skunk Works optional</span></div>
+          <div class="price">By conversation — <b>ask in your first voice note</b></div>
+          <div class="spacer"></div>
+          <a class="btn btn-primary" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Send a voice note</a>
+        </div>
+
+        <div class="offer" id="outfitter">
+          <div class="tag">Community of practice</div>
+          <h3>Venture Outfitter</h3>
+          <div class="role">Grow alongside a global cohort</div>
+          <p>Surround yourself with the community, resources, and support to scale your venture. Monthly calls with the coaching team, priority weekly programming, a private member community, comprehensive guidance, and special vendor pricing.</p>
+          <div class="meta"><span class="pill">Monthly calls</span><span class="pill">Private community</span><span class="pill">Curriculum + tools</span></div>
+          <div class="price"><b>$99/mo</b> · Founding members <b>$79/mo</b></div>
+          <div class="spacer"></div>
+          <!-- PLACEHOLDER: waitlist link / form -->
+          <a class="btn" href="#newsletter">Join the waitlist</a>
+        </div>
+
+        <div class="offer">
+          <div class="tag">For organizations & ecosystems</div>
+          <h3>Strategic Advisory</h3>
+          <div class="role">Hands-on growth & expansion</div>
+          <p>Growth strategy, cross-border expansion, and ecosystem development for organizations, investors, and regions. A different conversation than coaching — let's talk about what you're trying to build.</p>
+          <div class="meta"><span class="pill">Advisory</span><span class="pill">Cross-border</span><span class="pill">Ecosystems</span></div>
+          <div class="price">Scoped to the engagement</div>
+          <div class="spacer"></div>
+          <a class="btn" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Talk with me</a>
+        </div>
+
+        <div class="offer">
+          <div class="tag">For your stage</div>
+          <h3>Speaking</h3>
+          <div class="role">From the frontier to your room</div>
+          <p>TEDx speaker and global catalyst on transformational entrepreneurship, the care economy, and entrepreneurial ecosystems as resilience. Over 100 stages, nine countries — a speaker who does what he talks about.</p>
+          <div class="meta"><span class="pill">Keynote</span><span class="pill">Workshop</span><span class="pill">Panel</span></div>
+          <div class="price">Inquire for availability</div>
+          <div class="spacer"></div>
+          <a class="btn" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Book Kevin to speak</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <p class="eyebrow">How the 1:1 works</p>
+      <h2>Download an app. Press record. That's the onboarding.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Send a voice note</h3>
+          <p>Find me on Carbon Voice and tell me what you're working through. No form, no intake call, no "discovery session to see if we're a fit."</p>
+          <span class="when">90 seconds</span>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>I listen, then reply</h3>
+          <p>Not on a timer — when I have something genuinely useful to say. You get the real me, not an assistant and not a bot.</p>
+          <span class="when">Within 12 hours</span>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>We keep going</h3>
+          <p>A note when the decision is hot, a reply while you're walking. The conversation is always open, never scheduled.</p>
+          <span class="when">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT -->
+  <section class="section" id="fit">
+    <div class="wrap">
+      <p class="eyebrow dim">A litmus test, on purpose</p>
+      <h2>Who this is for — and who it really isn't.</h2>
+      <div class="fit">
+        <div class="fit-col yes">
+          <h3>You'll thrive here if…</h3>
+          <ul>
+            <li><span class="mk">+</span>You're building something and the hard calls keep stacking on you.</li>
+            <li><span class="mk">+</span>You'd rather think out loud in 60 seconds than prep for a 60-minute meeting.</li>
+            <li><span class="mk">+</span>You want a disruptive result, not a tune-up.</li>
+            <li><span class="mk">+</span>You believe who you become and what you build are the same work.</li>
+            <li><span class="mk">+</span>You'll press record before you over-script the wording.</li>
+          </ul>
+        </div>
+        <div class="fit-col no">
+          <h3>This won't fit if…</h3>
+          <ul>
+            <li><span class="mk">–</span>You want a weekly Zoom locked on the calendar.</li>
+            <li><span class="mk">–</span>You want a 12-week curriculum and a certificate — that's Venture Outfitter, and it's great. Just different.</li>
+            <li><span class="mk">–</span>You can't send a voice note without writing the script first.</li>
+            <li><span class="mk">–</span>You're collecting contacts, not building bridges.</li>
+            <li><span class="mk">–</span>You want status reports more than outcomes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="eyebrow">Who's on the other end</p>
+      <div class="bio">
+        <div class="bio-photo">
+          <!-- PLACEHOLDER: replace with licensed headshot -->
+          <span>Headshot<br>(licensed photo goes here)</span>
+        </div>
+        <div>
+          <h2 style="max-width:none;margin-bottom:20px;">Kevin Koym — global catalyst.</h2>
+          <p>For thirty years I built things most people only talked about — the first internet banking application in 1995, the e-commerce engine that generated over $2&nbsp;billion for Dell, eighteen commercial skunkworks, a stretch at NeXT learning how Jobs thought about creation. I had the visionary-technologist track every founder chases.</p>
+          <p>Then I walked an internal path intense enough that it reordered what I thought the work even was. What I came back with is what I build everything on now: the outer venture and the inner transformation aren't two tracks — they're the same road.</p>
+          <p>I left Silicon Valley for Austin to build that way, in community. That became Tech Ranch, 6,500 entrepreneurs across 42 countries, and the field I call Transformational Entrepreneurship. <span class="serif-em">Breakthrough</span> is where I do that work one to one.</p>
+          <div class="ministats">
+            <div><div class="n">7×</div><div class="l">Startup founder</div></div>
+            <div><div class="n">18</div><div class="l">Skunkworks</div></div>
+            <div><div class="n">TEDx</div><div class="l">Speaker</div></div>
+            <div><div class="n">Eagle Scout</div><div class="l">Where it started</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="section" id="proof">
+    <div class="wrap">
+      <p class="eyebrow">From the community</p>
+      <h2>The kind of trust you can't buy.</h2>
+      <!-- PLACEHOLDER: swap in real, approved testimonials with names + roles -->
+      <div class="quotes">
+        <div class="quote">
+          <p>"In a few minutes of conversation, he helped me distill my experience into a pitch that finally landed. He sees what makes you unique — and helps you say it."</p>
+          <div class="who">[Name, role — pending approval]</div>
+        </div>
+        <div class="quote">
+          <p>"He was a great mentor, and the Tech Ranch community stayed valuable years later. He gave us the customer-centric mindset we didn't have."</p>
+          <div class="who">[Name, role — pending approval]</div>
+        </div>
+        <div class="quote">
+          <p>"Kevin connects the right people across borders at exactly the right moment. That's a rare gift, and it changed our trajectory."</p>
+          <div class="who">[Name, role — pending approval]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section" id="newsletter">
+    <div class="wrap">
+      <div class="news">
+        <p class="eyebrow">Field notes</p>
+        <h2>One idea, every week.</h2>
+        <p class="lead" style="margin-top:8px;">Transformational entrepreneurship, the care economy, and building across borders. Short, useful, no noise.</p>
+        <!-- PLACEHOLDER: wire form action to email provider (Mailchimp / ConvertKit / Beehiiv) -->
+        <form onsubmit="this.querySelector('.note').textContent='You\'re in. Check your inbox to confirm.';return false;">
+          <input type="email" required placeholder="you@company.com" aria-label="Email address" />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <p class="note">Every Tuesday · Unsubscribe anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Questions people ask</p>
+      <h2>Fair enough — a few answers.</h2>
+      <div class="faq">
+        <div class="qa"><button>Is this actually you, or a team? <span class="ic">+</span></button><div class="ans"><p>It's me. Every reply, in my voice — because it is my voice. If you wouldn't want to talk to an assistant posing as me, good. Neither would I.</p></div></div>
+        <div class="qa"><button>What does it cost? <span class="ic">+</span></button><div class="ans"><p>Breakthrough coaching is by conversation — ask in your first voice note and I'll tell you what fits. Venture Outfitter membership is $99/mo, or $79/mo for founding members. Strategic Advisory is scoped to the engagement.</p></div></div>
+        <div class="qa"><button>How fast do you reply? <span class="ic">+</span></button><div class="ans"><p>Almost always within a few hours, always within 12. The rule is "when I have something useful to say," not "fast enough to look responsive."</p></div></div>
+        <div class="qa"><button>Can we ever hop on a Zoom? <span class="ic">+</span></button><div class="ans"><p>Breakthrough is voice by design. A 60-minute call usually compresses to four 90-second notes — without you canceling your afternoon. For advisory and speaking, we'll find the right format.</p></div></div>
+        <div class="qa"><button>What's the difference between Breakthrough and Venture Outfitter? <span class="ic">+</span></button><div class="ans"><p>Breakthrough is one-to-one with me — the deepest, most personal work. Venture Outfitter is the community of practice: a cohort of entrepreneurs, the coaching team, curriculum, and a private community. Many people do both.</p></div></div>
+        <div class="qa"><button>What is Carbon Voice? <span class="ic">+</span></button><div class="ans"><p>A voice-messaging app built for exactly this kind of conversation — threaded, transcribed, searchable. Free for you. Install it, find me, press and hold.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Press record. I'm listening.</h2>
+      <div class="waveform" id="finalWave" aria-hidden="true"></div>
+      <a class="btn btn-primary" href="https://cv.chat/kkoym" target="_blank" rel="noopener">Send Kevin a voice note</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="logo">KOYM<span>.</span></a>
+    <div class="flinks">
+      <a href="https://cv.chat/kkoym" target="_blank" rel="noopener">Carbon Voice</a>
+      <a href="https://techranchaustin.com" target="_blank" rel="noopener">Tech Ranch</a>
+      <a href="https://techranchaustin.com/programs/ventureoutfitter" target="_blank" rel="noopener">Venture Outfitter</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="fine">© 2026 Kevin Koym · Global Catalyst · Austin, Texas · No calendars · No meetings · Just voice</div>
+  </div>
+</footer>
+
+<script>
+  function buildWave(el,count){
+    if(!el)return;
+    for(var i=0;i<count;i++){
+      var bar=document.createElement('i');
+      var h=8+Math.abs(Math.sin(i*0.7))*30+Math.random()*6;
+      bar.style.height=Math.round(h)+'px';
+      bar.style.opacity=(0.3+Math.abs(Math.sin(i*0.5))*0.5).toFixed(2);
+      el.appendChild(bar);
+    }
+  }
+  buildWave(document.getElementById('heroWave'),64);
+  buildWave(document.getElementById('finalWave'),48);
+
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var qa=b.parentElement;
+      var ans=qa.querySelector('.ans');
+      var open=qa.classList.toggle('open');
+      ans.style.maxHeight=open?ans.scrollHeight+'px':0;
+    });
+  });
+</script>
+</body>
+</html>
