@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-1f1439e0-51ca-4f2e-87e0-166bb5adc125/styles.css">
+<script src="_ds/industry-1f1439e0-51ca-4f2e-87e0-166bb5adc125/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+  body { margin: 0; text-wrap: pretty; }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:14px clamp(20px,5vw,72px);background:color-mix(in srgb, var(--color-bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-divider)">
+  <a href="#top" style="font-family:var(--font-heading);font-weight:600;font-size:22px;letter-spacing:0.04em;color:var(--color-text);margin-right:auto">KOYM.</a>
+  <a href="#work" style="font-size:14px;color:var(--color-text)" style-hover="color:var(--color-accent)">Work with me</a>
+  <a href="#outfitter" style="font-size:14px;color:var(--color-text)" style-hover="color:var(--color-accent)">Venture Outfitter</a>
+  <a href="#about" style="font-size:14px;color:var(--color-text)" style-hover="color:var(--color-accent)">About</a>
+  <a href="#faq" style="font-size:14px;color:var(--color-text)" style-hover="color:var(--color-accent)">FAQ</a>
+  <a class="btn btn-primary" href="https://cv.chat/kkoym" style="text-decoration:none">Send a voice note</a>
+</nav>
+
+<div id="top"></div>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:clamp(48px,7vw,96px) 0 clamp(40px,5vw,72px)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700)">
+      <span style="display:inline-block;width:7px;height:7px;background:#d81f2a;border-radius:50%"></span>
+      Global catalyst · Async voice · 42 countries
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);gap:clamp(32px,5vw,72px);align-items:start;margin-top:28px">
+      <div>
+        <h1 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(46px,7vw,100px);line-height:0.96;letter-spacing:0.005em;text-transform:uppercase;margin:0">Tell me where you're trying to <span style="color:#d81f2a">grow.</span></h1>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(22px,2.6vw,34px);line-height:1.08;text-transform:uppercase;letter-spacing:0.01em;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin:18px 0 0">I'll tell you what I see — and <span style="color:var(--color-text)">who</span> you need.</p>
+        <p style="font-size:17px;line-height:1.6;max-width:52ch;margin:26px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">I'm <strong style="font-weight:700">Kevin Koym</strong> — a global catalyst who's spent thirty years and <strong style="font-weight:700">6,500 founders</strong> turning connection into coordinated action, and personal revolutions into disruptive results. No calendars. No forms. Just voice, the moment the decision is hot.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:30px">
+          <a class="btn btn-primary" href="https://cv.chat/kkoym" style="text-decoration:none;font-size:15px;padding:12px 20px">Send a voice note</a>
+          <a class="btn btn-secondary" href="#work" style="text-decoration:none;font-size:15px;padding:12px 20px">See how we work</a>
+        </div>
+      </div>
+      <sc-if value="{{ heroVoiceEmbed }}" hint-placeholder-val="{{ true }}">
+        <figure class="blueprint" style="margin:0;padding:16px;background:var(--color-surface)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin-bottom:12px">
+            <span style="display:inline-block;width:6px;height:6px;background:#d81f2a;border-radius:50%"></span> Live · Carbon Voice
+          </div>
+          <div style="border:1px solid var(--color-divider);background:var(--color-bg)">
+            <iframe src="https://embed.carbonvoice.app/s/KWvq2kV0cKj9dG3k" title="Send Kevin a voice note" style="width:100%;height:236px;border:0;display:block"></iframe>
+          </div>
+          <p style="font-size:12.5px;letter-spacing:0.02em;color:color-mix(in srgb, var(--color-text) 62%, transparent);margin:12px 0 0">Free · press and hold to record · reply within 12 hours</p>
+        </figure>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- credential ticker -->
+<sc-if value="{{ showCredentialTicker }}" hint-placeholder-val="{{ true }}">
+  <div style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:18px clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;font-size:14px;color:color-mix(in srgb, var(--color-text) 60%, transparent)">
+      <span style="font-size:11px;letter-spacing:0.14em;color:var(--color-accent-700)">Three decades in the field</span>
+      <span style="color:var(--color-divider)">/</span><span>NeXT · with Steve Jobs</span>
+      <span style="color:var(--color-divider)">/</span><span>Dell e-commerce engine</span>
+      <span style="color:var(--color-divider)">/</span><span>TEDx speaker</span>
+      <span style="color:var(--color-divider)">/</span><span>UT Austin</span>
+      <span style="color:var(--color-divider)">/</span><span>UBI Global Top-3 incubator</span>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ═══ STAT BAND (dark steel) ═══ -->
+<section style="background:var(--color-accent-900);color:var(--color-bg)">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,5vw,72px)">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px 24px">
+      <div>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(40px,4.5vw,64px);line-height:1;margin:0;color:var(--color-bg)">6,500<span style="color:#d81f2a">+</span></p>
+        <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent)">Entrepreneurs guided</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(40px,4.5vw,64px);line-height:1;margin:0;color:var(--color-bg)">42</p>
+        <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent)">Countries</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(40px,4.5vw,64px);line-height:1;margin:0;color:var(--color-bg)"><span style="color:#d81f2a">&lt;</span>12h</p>
+        <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent)">Typical reply</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:clamp(40px,4.5vw,64px);line-height:1;margin:0;color:var(--color-bg)">30<span style="font-size:0.5em;color:var(--color-accent-400)"> yrs</span></p>
+        <p style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 60%, transparent)">In the field</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /02 BELIEFS ═══ -->
+<section style="padding:clamp(56px,8vw,112px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 02</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">What I believe</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0;max-width:18ch">Bridges over <span style="color:#d81f2a">business cards.</span></h2>
+    <p style="font-size:17px;line-height:1.6;max-width:60ch;margin:22px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">Networking gives you contacts. Growth comes from the right connection, at the right moment, made by someone who understands how the whole system fits together. That's the work — and it can't wait for Thursday at 3.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px);margin-top:48px">
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">Bridges over business cards</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">Connection only matters when it becomes coordinated action.</p>
+      </div>
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">The answer already exists</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">Somewhere in 42 countries, someone has solved this. My work is knowing where — and connecting you to it.</p>
+      </div>
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">Trust before transaction</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">We talk first. I'm not running a meter on the relationship.</p>
+      </div>
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">Voice, not forms</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">Nuance and trust live in how you say it, not in a contact field.</p>
+      </div>
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">I see it; the Ranch builds it</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">Strategy and connection from me; programs and execution through Tech Ranch.</p>
+      </div>
+      <div class="blueprint" style="padding:24px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;margin:0">Inner and outer, one road</h3>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 78%, transparent)">The venture you build and the person you become are the same work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /03 A TUESDAY, TWO WAYS ═══ -->
+<section style="padding:clamp(56px,8vw,112px) 0;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 03</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">A hard Tuesday, two ways</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0;max-width:20ch">Scheduling the breakthrough <span style="color:#d81f2a">vs. sending the note.</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);margin-top:48px">
+      <!-- calendar way -->
+      <div class="blueprint" style="padding:0;background:var(--color-bg)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider)">
+          <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin:0">The calendar way</p>
+        </div>
+        <div style="padding:8px 24px 20px">
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:color-mix(in srgb, var(--color-text) 55%, transparent);min-width:52px">7:14</span><span style="font-size:15px;line-height:1.4">Co-founder wants out. You sit on it.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:color-mix(in srgb, var(--color-text) 55%, transparent);min-width:52px">9:30</span><span style="font-size:15px;line-height:1.4">Email your advisor. Wait for a slot.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:color-mix(in srgb, var(--color-text) 55%, transparent);min-width:52px">12:00</span><span style="font-size:15px;line-height:1.4">Draft messages. Delete them. Spiral.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:color-mix(in srgb, var(--color-text) 55%, transparent);min-width:52px">18:30</span><span style="font-size:15px;line-height:1.4">Finally talk. Twenty minutes of context-dump.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:color-mix(in srgb, var(--color-text) 55%, transparent);min-width:52px">22:00</span><span style="font-size:15px;line-height:1.4">Still turning it over in bed.</span></div>
+        </div>
+        <div style="padding:16px 24px;border-top:1px solid var(--color-divider);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Decisions made: 0 · Days lost: 1</div>
+      </div>
+      <!-- voice way -->
+      <div class="blueprint" style="padding:0;background:var(--color-bg)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="padding:20px 24px;border-bottom:1px solid var(--color-accent);background:var(--color-accent-100)">
+          <p style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--color-accent-800);margin:0">The voice way</p>
+        </div>
+        <div style="padding:8px 24px 20px">
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent);min-width:52px">7:16</span><span style="font-size:15px;line-height:1.4">Voice note to Kevin: "Co-founder wants out."</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent);min-width:52px">8:40</span><span style="font-size:15px;line-height:1.4">Reply: two questions, one frame, one intro.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent);min-width:52px">9:10</span><span style="font-size:15px;line-height:1.4">You answer while making coffee.</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent);min-width:52px">10:30</span><span style="font-size:15px;line-height:1.4">"Do this. Delay that. Here's who to call."</span></div>
+          <div style="display:flex;gap:18px;padding:12px 0"><span style="font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent);min-width:52px">14:00</span><span style="font-size:15px;line-height:1.4">You ship the plan. The line stays open.</span></div>
+        </div>
+        <div style="padding:16px 24px;border-top:1px solid var(--color-accent);background:var(--color-accent-100);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--color-accent-800)">Decisions made: 4 · Total talk time: 9 min</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /04 WAYS TO WORK ═══ -->
+<section id="work" style="padding:clamp(56px,8vw,112px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 04</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Ways to work together</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0">Four ways to <span style="color:#d81f2a">plug in.</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);margin-top:48px">
+      <!-- breakthrough -->
+      <div class="blueprint" style="padding:28px;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-accent" style="align-self:flex-start">Flagship · 1:1</span>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 4px">Breakthrough</h3>
+        <p style="font-size:13px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0">Driving a personal revolution</p>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">One-to-one coaching for a disruptive result, by async voice. For founders — and for leaders driving change inside a larger organization. Sometimes it grows into a corporate Skunk Works, but it always stays a relationship between you and me.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:18px 0">
+          <span class="tag tag-outline">1:1</span><span class="tag tag-outline">Async voice</span><span class="tag tag-outline">Skunk Works optional</span>
+        </div>
+        <p style="font-size:15px;margin:auto 0 16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">By conversation — <strong style="font-weight:700;color:var(--color-text)">ask in your first voice note</strong></p>
+        <a class="btn btn-primary" href="https://cv.chat/kkoym" style="text-decoration:none;align-self:flex-start;padding:11px 18px">Send a voice note</a>
+      </div>
+      <!-- venture outfitter -->
+      <div class="blueprint" id="outfitter" style="padding:28px;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-neutral" style="align-self:flex-start">Community of practice</span>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 4px">Venture Outfitter</h3>
+        <p style="font-size:13px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0">Grow alongside a global cohort</p>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Surround yourself with the community, resources, and support to scale your venture. Monthly calls with the coaching team, priority weekly programming, a private member community, comprehensive guidance, and special vendor pricing.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:18px 0">
+          <span class="tag tag-outline">Monthly calls</span><span class="tag tag-outline">Private community</span><span class="tag tag-outline">Curriculum + tools</span>
+        </div>
+        <p style="font-size:15px;margin:auto 0 16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)"><strong style="font-weight:700;color:var(--color-text)">$99/mo</strong> · Founding members $79/mo</p>
+        <a class="btn btn-secondary" href="#newsletter" style="text-decoration:none;align-self:flex-start;padding:11px 18px">Join the waitlist</a>
+      </div>
+      <!-- strategic advisory -->
+      <div class="blueprint" style="padding:28px;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-neutral" style="align-self:flex-start">Organizations & ecosystems</span>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 4px">Strategic Advisory</h3>
+        <p style="font-size:13px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0">Hands-on growth & expansion</p>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Growth strategy, cross-border expansion, and ecosystem development for organizations, investors, and regions. A different conversation than coaching — let's talk about what you're trying to build.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:18px 0">
+          <span class="tag tag-outline">Advisory</span><span class="tag tag-outline">Cross-border</span><span class="tag tag-outline">Ecosystems</span>
+        </div>
+        <p style="font-size:15px;margin:auto 0 16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Scoped to the engagement</p>
+        <a class="btn btn-secondary" href="https://cv.chat/kkoym" style="text-decoration:none;align-self:flex-start;padding:11px 18px">Talk with me</a>
+      </div>
+      <!-- speaking -->
+      <div class="blueprint" style="padding:28px;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-neutral" style="align-self:flex-start">For your stage</span>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 4px">Speaking</h3>
+        <p style="font-size:13px;letter-spacing:0.02em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0">From the frontier to your room</p>
+        <p style="font-size:15px;line-height:1.55;margin:14px 0 0;color:color-mix(in srgb, var(--color-text) 80%, transparent)">TEDx speaker and global catalyst on transformational entrepreneurship, the care economy, and entrepreneurial ecosystems as resilience. Over 100 stages, nine countries — a speaker who does what he talks about.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:18px 0">
+          <span class="tag tag-outline">Keynote</span><span class="tag tag-outline">Workshop</span><span class="tag tag-outline">Panel</span>
+        </div>
+        <p style="font-size:15px;margin:auto 0 16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Inquire for availability</p>
+        <a class="btn btn-secondary" href="https://cv.chat/kkoym" style="text-decoration:none;align-self:flex-start;padding:11px 18px">Book Kevin to speak</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /05 HOW IT WORKS ═══ -->
+<section style="padding:clamp(56px,8vw,112px) 0;background:var(--color-accent-900);color:var(--color-bg)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 05</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-bg) 55%, transparent)">How the 1:1 works</span>
+      <span style="flex:1;height:1px;background:color-mix(in srgb, var(--color-bg) 22%, transparent)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(32px,4.6vw,56px);line-height:1.02;letter-spacing:0.005em;text-transform:uppercase;margin:0;max-width:22ch;color:var(--color-bg)">Download an app. Press record. <span style="color:#d81f2a">That's the onboarding.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px);margin-top:48px">
+      <div style="border:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);padding:28px;position:relative">
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:56px;line-height:1;color:var(--color-accent-400);margin:0">01</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 0;color:var(--color-bg)">Send a voice note</h3>
+        <p style="font-size:15px;line-height:1.55;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 78%, transparent)">Find me on Carbon Voice and tell me what you're working through. No form, no intake call, no "discovery session to see if we're a fit."</p>
+        <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:18px 0 0;color:var(--color-accent-400)">90 seconds</p>
+      </div>
+      <div style="border:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);padding:28px;position:relative">
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:56px;line-height:1;color:var(--color-accent-400);margin:0">02</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 0;color:var(--color-bg)">I listen, then reply</h3>
+        <p style="font-size:15px;line-height:1.55;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 78%, transparent)">Not on a timer — when I have something genuinely useful to say. You get the real me, not an assistant and not a bot.</p>
+        <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:18px 0 0;color:var(--color-accent-400)">Within 12 hours</p>
+      </div>
+      <div style="border:1px solid color-mix(in srgb, var(--color-bg) 22%, transparent);padding:28px;position:relative">
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:56px;line-height:1;color:var(--color-accent-400);margin:0">03</p>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;margin:16px 0 0;color:var(--color-bg)">We keep going</h3>
+        <p style="font-size:15px;line-height:1.55;margin:12px 0 0;color:color-mix(in srgb, var(--color-bg) 78%, transparent)">A note when the decision is hot, a reply while you're walking. The conversation is always open, never scheduled.</p>
+        <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;margin:18px 0 0;color:var(--color-accent-400)">Ongoing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /06 LITMUS TEST ═══ -->
+<section style="padding:clamp(56px,8vw,112px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 06</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">A litmus test, on purpose</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0;max-width:20ch">Who this is for — <span style="color:#d81f2a">and who it really isn't.</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);margin-top:48px">
+      <div class="blueprint" style="padding:28px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;margin:0;color:var(--color-accent-700)">You'll thrive here if…</h3>
+        <ul style="list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5"><span style="color:var(--color-accent);font-weight:700;font-size:18px;line-height:1.3">+</span>You're building something and the hard calls keep stacking on you.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5"><span style="color:var(--color-accent);font-weight:700;font-size:18px;line-height:1.3">+</span>You'd rather think out loud in 60 seconds than prep for a 60-minute meeting.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5"><span style="color:var(--color-accent);font-weight:700;font-size:18px;line-height:1.3">+</span>You want a disruptive result, not a tune-up.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5"><span style="color:var(--color-accent);font-weight:700;font-size:18px;line-height:1.3">+</span>You believe who you become and what you build are the same work.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5"><span style="color:var(--color-accent);font-weight:700;font-size:18px;line-height:1.3">+</span>You'll press record before you over-script the wording.</li>
+        </ul>
+      </div>
+      <div class="blueprint" style="padding:28px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h3 style="font-family:var(--font-heading);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:0.01em;margin:0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">This won't fit if…</h3>
+        <ul style="list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 72%, transparent)"><span style="color:var(--color-neutral-500);font-weight:700;font-size:18px;line-height:1.3">–</span>You want a weekly Zoom locked on the calendar.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 72%, transparent)"><span style="color:var(--color-neutral-500);font-weight:700;font-size:18px;line-height:1.3">–</span>You want a 12-week curriculum and a certificate — that's Venture Outfitter, and it's great. Just different.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 72%, transparent)"><span style="color:var(--color-neutral-500);font-weight:700;font-size:18px;line-height:1.3">–</span>You can't send a voice note without writing the script first.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 72%, transparent)"><span style="color:var(--color-neutral-500);font-weight:700;font-size:18px;line-height:1.3">–</span>You're collecting contacts, not building bridges.</li>
+          <li style="display:flex;gap:12px;font-size:15px;line-height:1.5;color:color-mix(in srgb, var(--color-text) 72%, transparent)"><span style="color:var(--color-neutral-500);font-weight:700;font-size:18px;line-height:1.3">–</span>You want status reports more than outcomes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /07 ABOUT ═══ -->
+<section id="about" style="padding:clamp(56px,8vw,112px) 0;background:var(--color-surface)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 07</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Who's on the other end</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:start">
+      <figure class="blueprint duotone" style="margin:0">
+        <image-slot id="kevin-photo" shape="rect" src="assets/kevin.jpg" role="img" aria-label="Kevin Koym" style="width:100%;aspect-ratio:1/1"></image-slot>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </figure>
+      <div>
+        <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(30px,4vw,52px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0">Kevin Koym — <span style="color:#d81f2a">global catalyst.</span></h2>
+        <p style="font-size:16px;line-height:1.6;margin:22px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">For thirty years I built things most people only talked about — the first internet banking application in 1995, the e-commerce engine that generated over $2 billion for Dell, eighteen commercial skunkworks, a stretch at NeXT learning how Jobs thought about creation. I had the visionary-technologist track every founder chases.</p>
+        <p style="font-size:16px;line-height:1.6;margin:16px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">Then I walked an internal path intense enough that it reordered what I thought the work even was. What I came back with is what I build everything on now: the outer venture and the inner transformation aren't two tracks — they're the same road.</p>
+        <p style="font-size:16px;line-height:1.6;margin:16px 0 0;color:color-mix(in srgb, var(--color-text) 82%, transparent)">I left Silicon Valley for Austin to build that way, in community. That became Tech Ranch — 6,500 entrepreneurs across 42 countries, and the field I call Transformational Entrepreneurship. Breakthrough is where I do that work one to one.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;border-top:1px solid var(--color-divider);padding-top:28px">
+          <div><p style="font-family:var(--font-heading);font-weight:600;font-size:32px;line-height:1;margin:0">7×</p><p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin:8px 0 0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Startup founder</p></div>
+          <div><p style="font-family:var(--font-heading);font-weight:600;font-size:32px;line-height:1;margin:0">18</p><p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin:8px 0 0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Skunkworks</p></div>
+          <div><p style="font-family:var(--font-heading);font-weight:600;font-size:32px;line-height:1;margin:0">TEDx</p><p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin:8px 0 0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Speaker</p></div>
+          <div><p style="font-family:var(--font-heading);font-weight:600;font-size:32px;line-height:1;margin:0">Eagle</p><p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin:8px 0 0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Scout</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ /08 TESTIMONIALS ═══ -->
+<sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+<section style="padding:clamp(56px,8vw,112px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 08</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">From the community</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0;max-width:20ch">The kind of trust <span style="color:#d81f2a">you can't buy.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px);margin-top:48px">
+      <figure class="blueprint" style="margin:0;padding:28px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <blockquote style="font-family:var(--font-heading);font-weight:600;font-size:20px;line-height:1.25;margin:0">"In a few minutes of conversation, he helped me distill my experience into a pitch that finally landed. He sees what makes you unique — and helps you say it."</blockquote>
+        <figcaption style="font-size:13px;margin-top:20px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Name, role — pending approval</figcaption>
+      </figure>
+      <figure class="blueprint" style="margin:0;padding:28px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <blockquote style="font-family:var(--font-heading);font-weight:600;font-size:20px;line-height:1.25;margin:0">"He was a great mentor, and the Tech Ranch community stayed valuable years later. He gave us the customer-centric mindset we didn't have."</blockquote>
+        <figcaption style="font-size:13px;margin-top:20px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Name, role — pending approval</figcaption>
+      </figure>
+      <figure class="blueprint" style="margin:0;padding:28px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <blockquote style="font-family:var(--font-heading);font-weight:600;font-size:20px;line-height:1.25;margin:0">"Kevin connects the right people across borders at exactly the right moment. That's a rare gift, and it changed our trajectory."</blockquote>
+        <figcaption style="font-size:13px;margin-top:20px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Name, role — pending approval</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section id="newsletter" style="padding:clamp(48px,6vw,88px) 0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center">
+    <div>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700)">Field notes</span>
+      <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:14px 0 0">One idea, <span style="color:#d81f2a">every week.</span></h2>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:46ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Transformational entrepreneurship, the care economy, and building across borders. Short, useful, no noise.</p>
+    </div>
+    <div>
+      <div style="display:flex;gap:12px;max-width:440px">
+        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" style="flex:1" />
+        <a class="btn btn-primary" href="#newsletter" style="text-decoration:none;padding:0 20px;min-height:36px">Subscribe</a>
+      </div>
+      <p style="font-size:12px;letter-spacing:0.02em;margin:12px 0 0;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Every Tuesday · Unsubscribe anytime</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" style="padding:clamp(56px,8vw,112px) 0">
+  <div style="max-width:920px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:28px">
+      <span style="font-family:var(--font-heading);font-weight:600;font-size:15px;letter-spacing:0.1em;color:#d81f2a">/ 09</span>
+      <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Questions people ask</span>
+      <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+    </div>
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1;letter-spacing:0.005em;text-transform:uppercase;margin:0 0 40px">Fair enough — <span style="color:#d81f2a">a few answers.</span></h2>
+
+    <details style="border-top:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">Is this actually you, or a team?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">It's me. Every reply, in my voice — because it is my voice. If you wouldn't want to talk to an assistant posing as me, good. Neither would I.</p>
+    </details>
+    <details style="border-top:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">What does it cost?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Breakthrough coaching is by conversation — ask in your first voice note and I'll tell you what fits. Venture Outfitter membership is $99/mo, or $79/mo for founding members. Strategic Advisory is scoped to the engagement.</p>
+    </details>
+    <details style="border-top:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">How fast do you reply?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Almost always within a few hours, always within 12. The rule is "when I have something useful to say," not "fast enough to look responsive."</p>
+    </details>
+    <details style="border-top:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">Can we ever hop on a Zoom?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Breakthrough is voice by design. A 60-minute call usually compresses to four 90-second notes — without you canceling your afternoon. For advisory and speaking, we'll find the right format.</p>
+    </details>
+    <details style="border-top:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">Breakthrough vs. Venture Outfitter?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">Breakthrough is one-to-one with me — the deepest, most personal work. Venture Outfitter is the community of practice: a cohort of entrepreneurs, the coaching team, curriculum, and a private community. Many people do both.</p>
+    </details>
+    <details style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);padding:20px 0">
+      <summary style="display:flex;justify-content:space-between;gap:20px;font-family:var(--font-heading);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:0.01em">What is Carbon Voice?<span style="color:var(--color-accent);font-weight:400">+</span></summary>
+      <p style="font-size:16px;line-height:1.6;margin:16px 0 0;max-width:64ch;color:color-mix(in srgb, var(--color-text) 80%, transparent)">A voice-messaging app built for exactly this kind of conversation — threaded, transcribed, searchable. Free for you. Install it, find me, press and hold.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ═══ CLOSE (dark) ═══ -->
+<section style="background:var(--color-accent-900);color:var(--color-bg)">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,5vw,72px);text-align:center">
+    <h2 style="font-family:var(--font-heading);font-weight:600;font-size:clamp(44px,7vw,96px);line-height:0.98;letter-spacing:0.01em;text-transform:uppercase;margin:0;color:var(--color-bg)">Press record. <span style="color:#d81f2a">I'm listening.</span></h2>
+    <p style="font-size:17px;line-height:1.6;max-width:52ch;margin:24px auto 0;color:color-mix(in srgb, var(--color-bg) 78%, transparent)">Install Carbon Voice, find Kevin Koym, hold the button. The next 90 seconds is the entire onboarding.</p>
+    <a class="btn btn-primary" href="https://cv.chat/kkoym" style="text-decoration:none;margin-top:32px;font-size:16px;padding:14px 26px">Send Kevin a voice note</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="padding:clamp(32px,4vw,56px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
+    <a href="#top" style="font-family:var(--font-heading);font-weight:600;font-size:20px;letter-spacing:0.04em;color:var(--color-text);margin-right:auto">KOYM.</a>
+    <a href="https://cv.chat/kkoym" style="font-size:14px">Carbon Voice</a>
+    <a href="https://techranchaustin.com" style="font-size:14px">Tech Ranch</a>
+    <a href="https://techranchaustin.com/programs/ventureoutfitter" style="font-size:14px">Venture Outfitter</a>
+    <a href="#about" style="font-size:14px">About</a>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:20px clamp(20px,5vw,72px) 0;font-size:12.5px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">© 2026 Kevin Koym · Global Catalyst · Austin, Texas · No calendars · No meetings · Just voice</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900},&quot;heroVoiceEmbed&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;,&quot;label&quot;:&quot;Show voice recorder in hero&quot;},&quot;showCredentialTicker&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;,&quot;label&quot;:&quot;Show credential ticker&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;,&quot;label&quot;:&quot;Show testimonials&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      heroVoiceEmbed: this.props.heroVoiceEmbed ?? true,
+      showCredentialTicker: this.props.showCredentialTicker ?? true,
+      showTestimonials: this.props.showTestimonials ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
