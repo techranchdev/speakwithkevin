@@ -1,0 +1,37 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/talks", "destination": "/speaking", "permanent": true },
+    { "source": "/keynote", "destination": "/speaking", "permanent": true },
+    { "source": "/workshop", "destination": "/speaking/market-entry", "permanent": true },
+    { "source": "/contact", "destination": "/book", "permanent": true },
+    { "source": "/hire", "destination": "/book", "permanent": true },
+    { "source": "/newsletter", "destination": "/campfire", "permanent": true },
+    { "source": "/outfitter", "destination": "https://techranchaustin.com/programs/ventureoutfitter/", "permanent": true },
+    { "source": "/work", "destination": "/work-with-me", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_ds/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}
