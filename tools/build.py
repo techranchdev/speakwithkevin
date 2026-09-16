@@ -21,7 +21,7 @@ NAV = """
 <nav class="nav">
   <a class="nav-brand" href="/">Kevin Koym</a>
   <a class="nav-link{a_speaking}" href="/speaking">Speaking</a>
-  <a class="nav-link{a_program}" href="/program">Programme</a>
+  <a class="nav-link{a_program}" href="/program">Program</a>
   <a class="nav-link{a_campfire}" href="/campfire">Campfire</a>
   <a class="nav-link{a_about}" href="/about">About</a>
   <a class="nav-link{a_work}" href="/work-with-me">Work with me</a>
@@ -34,7 +34,7 @@ FOOTER = f"""
   <div class="wrap stack">
     <div class="footer-links">
       <a href="/speaking">Speaking</a>
-      <a href="/program">Programme</a>
+      <a href="/program">Program</a>
       <a href="/campfire">Campfire</a>
       <a href="/about">About</a>
       <a href="/work-with-me">Work with me</a>
@@ -279,7 +279,7 @@ LEGACY_HASH = """
 
 built.append(page("index.html",
     "Kevin Koym — Don't just start a startup",
-    "Kevin Koym helped build Austin's entrepreneurial ecosystem and has carried the method to 42 countries. Keynotes, the U.S. market-entry workshop, and ecosystem programmes for the places that want to build one.",
+    "Kevin Koym helped build Austin's entrepreneurial ecosystem and has carried the method to 42 countries. Keynotes, the U.S. market-entry workshop, and ecosystem programs for the places that want to build one.",
     f"""
 <section class="band">
   <div class="wrap">
@@ -414,7 +414,7 @@ built.append(page("index.html",
       <div class="stack">
         <p class="eyebrow eyebrow-brick">Who's talking</p>
         <h2 class="d2">I have a lot of scar tissue to donate to your process.</h2>
-        <p class="body">Electrical engineering at UT Austin, with honours, in 1990 — into a city that had no jobs for its best engineers. Three and a half years at NeXT with Steve Jobs, then back to Austin anyway, because of how people there treat each other. I wrote the commerce engine that carried Dell's first two billion dollars of online sales, alone, in my living room.</p>
+        <p class="body">Electrical engineering at UT Austin, with honors, in 1990 — into a city that had no jobs for its best engineers. Three and a half years at NeXT with Steve Jobs, then back to Austin anyway, because of how people there treat each other. I wrote the commerce engine that carried Dell's first two billion dollars of online sales, alone, in my living room.</p>
         <p class="body">In 2003 a friend died and none of it made sense any more. So I stopped building products and built a place for founders instead. That was Tech Ranch, and it has been twenty-three years and forty-two countries since.</p>
         <div class="btn-row">
           <a class="btn btn-secondary" href="/about">The longer version</a>
@@ -441,7 +441,7 @@ built.append(page("index.html",
 
 built.append(page("speaking/index.html",
     f"Speaking — {SITE}",
-    "Keynotes, the signature U.S. market-entry workshop, and full ecosystem programmes. How to book Kevin Koym.",
+    "Keynotes, the signature U.S. market-entry workshop, and full ecosystem programs. How to book Kevin Koym.",
     f"""
 <section class="band">
   <div class="wrap stack">
@@ -474,7 +474,7 @@ built.append(page("speaking/index.html",
         <p class="body-sm">The evening moves the room; the next morning puts tools in their hands. The most common booking, and the one I'd suggest.</p>
       </div>
       <div class="stack-sm">
-        <p class="d4">Full programme</p>
+        <p class="d4">Full program</p>
         <p class="body-sm">Where the workshop is one phase of something longer, ending with your companies on the ground in Austin.</p>
       </div>
     </div>
@@ -540,14 +540,14 @@ built.append(talk_page(
         "The difference between being against something and being for something — and why only one of them survives to Monday morning.",
         "Why culture precedes capital, with the thirty-year Austin case as evidence rather than inspiration.",
         "The three things an entrepreneur becomes when the business stops being the point: pioneer, revolutionary, guardian — and a demand that they choose one.",
-        "A concrete next step, because a room that leaves moved and unorganised has been wasted.",
+        "A concrete next step, because a room that leaves moved and unorganized has been wasted.",
     ],
     "Revolt is against.<br>Revolution is for.",
     aside_title="Best for",
     aside_items=[
         "Festival and conference main stages",
         "Ecosystem gatherings where the audience is mixed — founders, officials, students",
-        "Opening a programme you want people to commit to",
+        "Opening a program you want people to commit to",
         "Rooms outside the United States, which is where most of these have been given",
     ],
 ))
@@ -588,7 +588,7 @@ built.append(talk_page(
     ["30–45 minutes", "For founders considering the U.S.", "Pairs well with the workshop"],
     [
         "In Silicon Valley a water technology founder and a social media founder somehow end up at each other's throats despite not competing. The first question is what's your valuation. In Austin the first question is what are you building, and the honest answer is that this is not a personality difference — it is a culture that was deliberately built and is deliberately maintained.",
-        "Austin was settled by hippie musicians. The norm they left behind is you play your thing, I'll play mine, and I'll help you carry your amplifier. Nobody organised that and nobody funded it. Twenty-five years later it is a global city, and every visitor expects the answer to be money. It was never money. The money came because of the culture, and it has never once gone the other way.",
+        "Austin was settled by hippie musicians. The norm they left behind is you play your thing, I'll play mine, and I'll help you carry your amplifier. Nobody organized that and nobody funded it. Twenty-five years later it is a global city, and every visitor expects the answer to be money. It was never money. The money came because of the culture, and it has never once gone the other way.",
         "The second half is the uncomfortable part: most international founders fail in the U.S. before they arrive. They treat it as one market. They lead with the product instead of the relationship. They undersell themselves in a market that reads confident vision as competence. And they arrive alone.",
     ],
     [
@@ -602,7 +602,7 @@ built.append(talk_page(
     aside_items=[
         "Accelerator and incubator cohorts",
         "Trade missions and chamber of commerce audiences",
-        "University entrepreneurship programmes",
+        "University entrepreneurship programs",
         "Any room where most people are considering the U.S. and nobody has been",
     ],
 ))
@@ -638,12 +638,12 @@ built.append(talk_page(
 # ── /program ─────────────────────────────────────────────────────────────────
 
 built.append(page("program/index.html",
-    f"The programme — {SITE}",
+    f"The program — {SITE}",
     "The five-phase Venture Engagement Model: from first conversations to companies landing in the United States.",
     f"""
 <section class="band">
   <div class="wrap stack">
-    <p class="eyebrow eyebrow-brick">The programme</p>
+    <p class="eyebrow eyebrow-brick">The program</p>
     <h1 class="d2" style="max-width:22ch">Most places aren't looking for a speaker. They're looking for a method.</h1>
     <p class="lede" style="max-width:48ch">The ones that get the most out of this are trying to build something that outlasts the event. When that's true, the workshop is one phase of five.</p>
   </div>
@@ -782,8 +782,8 @@ built.append(page("book/index.html",
 
           <div class="field-row">
             <div class="field">
-              <label for="organisation">Organisation</label>
-              <input class="input" id="organisation" name="organisation" type="text" autocomplete="organization">
+              <label for="organization">Organization</label>
+              <input class="input" id="organization" name="organization" type="text" autocomplete="organization">
             </div>
             <div class="field">
               <label for="role">Your role</label>
@@ -793,7 +793,7 @@ built.append(page("book/index.html",
 
           <div class="field">
             <label for="event">Event</label>
-            <input class="input" id="event" name="event" type="text" placeholder="Name of the conference, programme or gathering">
+            <input class="input" id="event" name="event" type="text" placeholder="Name of the conference, program or gathering">
           </div>
 
           <div class="field-row">
@@ -814,7 +814,7 @@ built.append(page("book/index.html",
               <option>Keynote</option>
               <option>Workshop</option>
               <option>Keynote + workshop</option>
-              <option>Full ecosystem programme</option>
+              <option>Full ecosystem program</option>
               <option>Not sure yet — let's talk</option>
             </select>
           </div>
@@ -879,7 +879,7 @@ built.append(page("book/index.html",
           <li>If a talk isn't the right instrument, I'll say so. Sometimes the workshop on its own does more.</li>
         </ul>
         <hr class="rule">
-        <p class="eyebrow">If you're a founder, not an organiser</p>
+        <p class="eyebrow">If you're a founder, not an organizer</p>
         <p class="body-sm">Don't use this form. Send a voice note instead — it comes straight to me and I answer them personally.</p>
         <div class="btn-row">
           <a class="btn btn-secondary" href="https://cv.chat/kkoym">Send a voice note</a>
@@ -920,7 +920,7 @@ built.append(page("about/index.html",
         <p class="eyebrow eyebrow-brick">The arc</p>
       </div>
       <div class="stack">
-        <p class="body">I graduated in electrical engineering from the University of Texas at Austin in 1990, with honours, into a city that had no jobs for its best engineers. That is not an exaggeration — Austin in 1990 was a college town with good music and no reason for anyone to take it seriously.</p>
+        <p class="body">I graduated in electrical engineering from the University of Texas at Austin in 1990, with honors, into a city that had no jobs for its best engineers. That is not an exaggeration — Austin in 1990 was a college town with good music and no reason for anyone to take it seriously.</p>
         <p class="body">So I went to Silicon Valley and spent three and a half years at NeXT, Steve Jobs' company, learning what technology could do to the world when someone meant it. Then I came back to Austin anyway, because of how people there treat each other.</p>
         <p class="body">What followed was the building years. A trading system for Fidelity. Workflow for AT&amp;T. The first internet banking application in the world. And the commerce engine that carried Dell's first two billion dollars of online sales, which I wrote alone, in my living room. In 1994, at twenty-four, I sold software to a bank in Guadalajara — an accidental cross-border sale that turned out to be the shape of my whole career.</p>
         <p class="body">In 2003 my friend Danielle died. She was twenty-four, with a daughter a year and a half old, and by every measure any of us used then she was winning. Afterwards none of the things I had built made sense to me, and it did not make sense to build one more.</p>
@@ -982,12 +982,12 @@ built.append(page("about/index.html",
   <div class="wrap">
     <div class="split">
       <div class="stack-sm">
-        <p class="eyebrow eyebrow-brick">Facts, for a programme</p>
+        <p class="eyebrow eyebrow-brick">Facts, for a program</p>
       </div>
       <div class="stack">
         <ul class="list">
           <li>Founder and CEO, Tech Ranch Austin — 6,500+ entrepreneurs, 42+ countries, 750+ solutions deployed</li>
-          <li>BSEE with honours, University of Texas at Austin, 1990</li>
+          <li>BSEE with honors, University of Texas at Austin, 1990</li>
           <li>Three and a half years at NeXT under Steve Jobs</li>
           <li>Built the first internet banking application in the world</li>
           <li>Built the e-commerce engine behind Dell's first $2 billion in online sales</li>
@@ -1072,7 +1072,7 @@ built.append(page("campfire/index.html",
 
 built.append(page("work-with-me/index.html",
     f"Work with me — {SITE}",
-    "Async voice coaching, the Venture Outfitter cohort, and strategic advisory for organisations.",
+    "Async voice coaching, the Venture Outfitter cohort, and strategic advisory for organizations.",
     """
 <section class="band">
   <div class="wrap stack">
@@ -1122,14 +1122,14 @@ built.append(page("work-with-me/index.html",
           <h3 class="entry-title">Venture Outfitter</h3>
           <div class="entry-meta"><span>Cohort + community</span><span>$99/mo · $79 founding</span></div>
         </div>
-        <p class="entry-desc">The programme for founders who want the method rather than a single answer — structure, a cohort going through the same thing, and the community that outlasts it.</p>
+        <p class="entry-desc">The program for founders who want the method rather than a single answer — structure, a cohort going through the same thing, and the community that outlasts it.</p>
         <span class="entry-go">Join →</span>
       </a>
 
       <a class="entry" href="/book">
         <div>
           <h3 class="entry-title">Strategic advisory</h3>
-          <div class="entry-meta"><span>Organisations</span><span>Ecosystem building</span></div>
+          <div class="entry-meta"><span>Organizations</span><span>Ecosystem building</span></div>
         </div>
         <p class="entry-desc">For agencies, universities and companies building an entrepreneurial ecosystem rather than a single venture. Usually starts with a talk or a workshop.</p>
         <span class="entry-go">Enquire →</span>
@@ -1200,9 +1200,9 @@ FAQS = [
     ("Can we just do a Zoom?",
      "Generally no, and not to be difficult. Live calls get scheduled for whenever both calendars are free, which is rarely when the decision is actually being made. Async voice gets you an answer in the window where it still changes something."),
     ("What does the Venture Outfitter cost?",
-     "$99 a month, or $79 for founding members. It is the cohort and community programme, distinct from one-to-one access."),
+     "$99 a month, or $79 for founding members. It is the cohort and community program, distinct from one-to-one access."),
     ("What do you charge to speak?",
-     "It depends on the format, the travel, and what else we're building around it — a keynote and a full ecosystem programme are not the same conversation. Tell me about the event and I'll be straightforward with you quickly."),
+     "It depends on the format, the travel, and what else we're building around it — a keynote and a full ecosystem program are not the same conversation. Tell me about the event and I'll be straightforward with you quickly."),
     ("Do you travel?",
      "Yes, and most of this work happens outside the United States. Forty-two countries so far. Travel and accommodation are normally covered by the host."),
     ("How much notice do you need?",
@@ -1211,10 +1211,10 @@ FAQS = [
      "I can open a room in Spanish and I do, but I deliver in English. My Spanish was learned across tables with Mexican friends and it shows."),
     ("What do you need from us for the workshop?",
      "A room where people can interrupt me, roughly fifteen companies who are seriously considering the U.S. market, a local founder who has already made the crossing, and a local attorney for the legal segment. You almost certainly have the last two already."),
-    ("We're a small organisation with a small budget. Is it worth asking?",
-     "Yes. Ask. Some of the best work I've done started with an email that opened by apologising for the budget."),
+    ("We're a small organization with a small budget. Is it worth asking?",
+     "Yes. Ask. Some of the best work I've done started with an email that opened by apologizing for the budget."),
     ("What happens after the event?",
-     "That's the part most people don't plan and it's the part that matters. There's a monthly campfire anyone from your room can join, and a cohort programme for the ones who want to keep going. If you want something bigger built in your city, that's the programme."),
+     "That's the part most people don't plan and it's the part that matters. There's a monthly campfire anyone from your room can join, and a cohort program for the ones who want to keep going. If you want something bigger built in your city, that's the program."),
 ]
 
 faq_html = "\n".join(f"""      <div class="stack-sm">
@@ -1283,9 +1283,9 @@ built.append(page("next/index.html",
       <a class="entry" href="/book">
         <div>
           <h3 class="entry-title">Bring this to your city</h3>
-          <div class="entry-meta"><span>Organisers</span><span>Talk · workshop · programme</span></div>
+          <div class="entry-meta"><span>Organizers</span><span>Talk · workshop · program</span></div>
         </div>
-        <p class="entry-desc">If you run a programme, an agency, a chamber or a university and you want the room you were just in to happen where you are.</p>
+        <p class="entry-desc">If you run a program, an agency, a chamber or a university and you want the room you were just in to happen where you are.</p>
         <span class="entry-go">Enquire →</span>
       </a>
     </div>

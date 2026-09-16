@@ -41,7 +41,7 @@ To add a talk: add an entry to `talk_entries()` and a `talk_page(...)` call.
 
 ## Design system
 
-`_ds/orbit/styles.css` is the whole look — colour, type, and every component
+`_ds/orbit/styles.css` is the whole look — color, type, and every component
 class. Change the tokens at the top of that file and the entire site follows.
 
 The previous system is still in `_ds/industry-*/` and is no longer referenced.
@@ -80,4 +80,4 @@ prettify it without checking that still works.
 - `/speaking` has no past-rooms section. It's the single biggest upgrade
   available to that page once Kevin signs off on which events can be named.
 - Venture Outfitter pricing appears both here on `/work-with-me` and on the
-  Tech Ranch programme page. Two places to update when it changes.
+  Tech Ranch program page. Two places to update when it changes.
