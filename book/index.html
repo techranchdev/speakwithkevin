@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Kevin to speak — Kevin Koym</title>
+<meta name="description" content="Tell Kevin Koym about your event — format, city, audience and timing — and start the conversation.">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png">
+<link rel="stylesheet" href="/_ds/orbit/styles.css">
+<script src="/image-slot.js"></script>
+<meta property="og:title" content="Book Kevin to speak — Kevin Koym">
+<meta property="og:description" content="Tell Kevin Koym about your event — format, city, audience and timing — and start the conversation.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+</helmet>
+
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <a class="nav-brand" href="/">Kevin Koym</a>
+  <a class="nav-link" href="/speaking">Speaking</a>
+  <a class="nav-link" href="/program">Program</a>
+  <a class="nav-link" href="/campfire">Campfire</a>
+  <a class="nav-link" href="/about">About</a>
+  <a class="nav-link" href="/work-with-me">Work with me</a>
+  <a class="btn btn-primary nav-keep" href="/book">Book Kevin</a>
+</nav>
+<main id="main">
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow eyebrow-brick">Booking</p>
+    <h1 class="d2" style="max-width:20ch">Tell me about the room.</h1>
+    <p class="lede" style="max-width:46ch">This takes about two minutes and asks the things I'd otherwise have to email you about. The more of it you fill in, the more useful my first reply is.</p>
+  </div>
+</section>
+
+<section class="band-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p id="book-status" tabindex="-1"></p>
+        <form id="book-form" class="form" novalidate>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input class="input" id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="organization">Organization</label>
+              <input class="input" id="organization" name="organization" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="role">Your role</label>
+              <input class="input" id="role" name="role" type="text" autocomplete="organization-title">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="event">Event</label>
+            <input class="input" id="event" name="event" type="text" placeholder="Name of the conference, program or gathering">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="location">City and country</label>
+              <input class="input" id="location" name="location" type="text" required>
+            </div>
+            <div class="field">
+              <label for="dates">Date or window</label>
+              <input class="input" id="dates" name="dates" type="text" placeholder="A date, a month, or 'not fixed yet'">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="format">What you're after</label>
+            <select class="input" id="format" name="format" required>
+              <option value="">Choose one</option>
+              <option>Keynote</option>
+              <option>Workshop</option>
+              <option>Keynote + workshop</option>
+              <option>Full ecosystem program</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="audience_size">Audience size</label>
+              <input class="input" id="audience_size" name="audience_size" type="text" placeholder="Roughly">
+            </div>
+            <div class="field">
+              <label for="audience_type">Who's in the room</label>
+              <input class="input" id="audience_type" name="audience_type" type="text" placeholder="Founders, students, officials, corporates, mixed">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="budget">Budget range</label>
+            <select class="input" id="budget" name="budget">
+              <option value="">Choose one</option>
+              <option>Not sure — tell me what's typical</option>
+              <option>Under $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $50,000</option>
+              <option>Over $50,000</option>
+              <option>We have no budget but read on</option>
+            </select>
+            <span class="hint">Asked so the first reply is useful rather than a round of guessing. It is not a filter.</span>
+          </div>
+
+          <div class="field">
+            <label for="travel">Travel and accommodation</label>
+            <select class="input" id="travel" name="travel">
+              <option value="">Choose one</option>
+              <option>Covered</option>
+              <option>Partly covered</option>
+              <option>Not covered</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="hoping">What are you hoping happens in the room?</label>
+            <textarea class="input" id="hoping" name="hoping" rows="5" placeholder="The thing you actually want out of this. This is the part I read first."></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="company_website">Leave this blank</label>
+            <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="book-submit" type="submit">Send it</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="stack">
+        <p class="eyebrow">What happens next</p>
+        <ul class="list">
+          <li>You'll hear back within a few days.</li>
+          <li>We talk about what you're trying to achieve before anyone talks about a fee.</li>
+          <li>If a talk isn't the right instrument, I'll say so. Sometimes the workshop on its own does more.</li>
+        </ul>
+        <hr class="rule">
+        <p class="eyebrow">If you're a founder, not an organizer</p>
+        <p class="body-sm">Don't use this form. Send a voice note instead — it comes straight to me and I answer them personally.</p>
+        <div class="btn-row">
+          <a class="btn btn-secondary" href="https://cv.chat/kkoym">Send a voice note</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap stack">
+    <div class="footer-links">
+      <a href="/speaking">Speaking</a>
+      <a href="/program">Program</a>
+      <a href="/campfire">Campfire</a>
+      <a href="/about">About</a>
+      <a href="/work-with-me">Work with me</a>
+      <a href="/faq">FAQ</a>
+      <a href="/book">Book Kevin</a>
+    </div>
+    <hr class="rule">
+    <p class="footer-fine">Kevin Koym · Austin, Texas · Tech Ranch · © 2026</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('book-form');
+  if (!form) return;
+  var status = document.getElementById('book-status');
+  var submit = document.getElementById('book-submit');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    status.textContent = '';
+    status.className = '';
+    submit.disabled = true;
+    var original = submit.textContent;
+    submit.textContent = 'Sending…';
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+    try {
+      var res = await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      var out = await res.json().catch(function () { return {}; });
+
+      if (res.ok) {
+        form.hidden = true;
+        status.className = 'alert alert-ok';
+        status.textContent = "Thank you — that's with us. You'll hear back within a few days. If it's urgent, email admin@techranchaustin.com directly.";
+        status.focus();
+      } else {
+        status.className = 'alert';
+        status.textContent = (out && out.error) || 'Something went wrong sending that. Please email admin@techranchaustin.com instead — it reaches the same place.';
+      }
+    } catch (err) {
+      status.className = 'alert';
+      status.textContent = 'That could not be sent — you may be offline. Please email admin@techranchaustin.com instead.';
+    } finally {
+      submit.disabled = false;
+      submit.textContent = original;
+    }
+  });
+})();
+</script>
+
+</x-dc>
+</body>
+</html>
