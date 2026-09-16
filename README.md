@@ -62,7 +62,42 @@ Set these in Vercel → Settings → Environment Variables:
 | --- | --- | --- |
 | `RESEND_API_KEY` | Yes | From resend.com/api-keys |
 | `BOOKING_INBOX` | No | Defaults to `admin@techranchaustin.com` |
-| `BOOKING_FROM` | No | Must be on a domain verified in Resend. Defaults to `bookings@techranchaustin.com` |
+| `BOOKING_FROM` | No | Must be a verified Resend sender. Defaults to `bookings@techranchaustin.com` |
+| `HUBSPOT_TOKEN` | No | Private app access token. Without it the HubSpot step is skipped and email still works |
+| `HUBSPOT_PIPELINE` | No | Defaults to `default` |
+| `HUBSPOT_DEAL_STAGE` | No | Defaults to `appointmentscheduled` |
+| `HUBSPOT_OWNER_EMAIL` | No | Deal owner. Defaults to `sales@techranchaustin.com` |
+| `HUBSPOT_DEAL_TYPE` | No | Defaults to `Kevin Gig Booking` |
+
+### HubSpot
+
+Each booking enquiry creates a Contact (matched on email, so repeat enquiries
+attach to the same person) and an associated Deal carrying the full submission
+in its `description`. A Note is also attempted, but only as a nicety — the
+notes scope isn't offered on every HubSpot plan, so nothing depends on it. The
+deal `amount` is deliberately left blank; the form collects a budget band, not
+a figure.
+
+Deals are assigned to the owner named by `HUBSPOT_OWNER_EMAIL` and tagged with
+the deal type in `HUBSPOT_DEAL_TYPE`. Two prerequisites:
+
+- that email must belong to an actual HubSpot user, and the app needs the
+  `crm.objects.owners.read` scope to resolve it to an owner id
+- `dealtype` is an enumeration, so the value must already exist as an option
+  under Settings → Objects → Deals → Manage properties → Deal Type
+
+If either is missing the deal is still created, just without the owner or
+type, and the log line says which was rejected.
+
+The private app needs five scopes: `crm.objects.contacts.read`,
+`crm.objects.contacts.write`, `crm.objects.deals.read`,
+`crm.objects.deals.write`, `crm.objects.owners.read`. Add
+`crm.objects.notes.read` / `.write` too if your plan offers them.
+
+HubSpot runs *after* the email and never blocks it. If the token expires or
+a property name is wrong, the enquiry still lands in the inbox and the error
+goes to the Vercel function logs. Campfire signups are not deals, so they are
+emailed only.
 
 `techranchaustin.com` must be verified as a sending domain in Resend, which
 means adding DNS records. Until `RESEND_API_KEY` exists the form fails
