@@ -24,8 +24,9 @@
  *   BOOKING_FROM         optional. Must be a verified Resend sender.
  *   HUBSPOT_TOKEN        optional. Private app access token. Without it the
  *                        HubSpot step is skipped silently and email still works.
- *   HUBSPOT_PIPELINE     optional. Defaults to "default"
- *   HUBSPOT_DEAL_STAGE   optional. Defaults to "appointmentscheduled"
+ *   HUBSPOT_PIPELINE     optional. Pipeline name or id. Blank picks the one
+ *                        containing the named stage.
+ *   HUBSPOT_DEAL_STAGE   optional. Stage name or id. Defaults to "New Prospect"
  *   HUBSPOT_OWNER_EMAIL  optional. Defaults to sales@techranchaustin.com
  *   HUBSPOT_DEAL_TYPE    optional. Defaults to "Kevin Gig Booking"
  *
@@ -38,8 +39,8 @@ const INBOX = process.env.BOOKING_INBOX || "admin@techranchaustin.com";
 const FROM = process.env.BOOKING_FROM || "Speak With Kevin <bookings@techranchaustin.com>";
 
 const HS = "https://api.hubapi.com";
-const HS_PIPELINE = process.env.HUBSPOT_PIPELINE || "default";
-const HS_STAGE = process.env.HUBSPOT_DEAL_STAGE || "appointmentscheduled";
+const HS_PIPELINE = process.env.HUBSPOT_PIPELINE || "";
+const HS_STAGE = process.env.HUBSPOT_DEAL_STAGE || "New Prospect";
 const HS_OWNER_EMAIL = process.env.HUBSPOT_OWNER_EMAIL || "sales@techranchaustin.com";
 const HS_DEAL_TYPE = process.env.HUBSPOT_DEAL_TYPE || "Kevin Gig Booking";
 
@@ -135,6 +136,59 @@ async function upsertContact(token, { email, name, organisation, role }) {
 }
 
 /**
+ * Pipelines and stages are addressed by internal id, but ids are invisible in
+ * the HubSpot UI and differ per portal — so the config names them in plain
+ * English and this resolves them. Matching is case-insensitive and accepts
+ * either the label ("New Prospect") or the raw id, so both styles work.
+ *
+ * If HUBSPOT_PIPELINE is blank, the pipeline containing the named stage wins;
+ * failing that, the first pipeline. If the lookup itself fails, the configured
+ * values are passed through unchanged and HubSpot gets the final say.
+ */
+async function resolvePipeline(token) {
+  const res = await hubspot("/crm/v3/pipelines/deals", null, token, "GET");
+  if (!res.ok || !res.json || !Array.isArray(res.json.results)) {
+    console.error(`HubSpot pipeline lookup failed (${res.status}): ${res.text.slice(0, 200)}`);
+    return { pipeline: HS_PIPELINE || undefined, stage: HS_STAGE, resolved: false };
+  }
+
+  const pipelines = res.json.results;
+  const eq = (a, b) => String(a).trim().toLowerCase() === String(b).trim().toLowerCase();
+  const findStage = (pl) =>
+    (pl.stages || []).find((st) => eq(st.label, HS_STAGE) || eq(st.id, HS_STAGE));
+
+  let pipeline = HS_PIPELINE
+    ? pipelines.find((pl) => eq(pl.label, HS_PIPELINE) || eq(pl.id, HS_PIPELINE))
+    : pipelines.find((pl) => findStage(pl));
+
+  if (!pipeline) pipeline = pipelines[0];
+  if (!pipeline) return { pipeline: undefined, stage: HS_STAGE, resolved: false };
+
+  const stage = findStage(pipeline);
+  if (!stage) {
+    console.error(
+      `HubSpot stage "${HS_STAGE}" not found in pipeline "${pipeline.label}". ` +
+        `Available: ${(pipeline.stages || []).map((st) => st.label).join(", ")}`
+    );
+    // Fall back to the pipeline's first stage rather than failing the create.
+    const first = (pipeline.stages || [])[0];
+    return {
+      pipeline: pipeline.id,
+      stage: first ? first.id : undefined,
+      label: `${pipeline.label} / ${first ? first.label : "?"} (fallback)`,
+      resolved: false,
+    };
+  }
+
+  return {
+    pipeline: pipeline.id,
+    stage: stage.id,
+    label: `${pipeline.label} / ${stage.label}`,
+    resolved: true,
+  };
+}
+
+/**
  * Deals are owned by a user id, not an email, so the address has to be
  * resolved first. Needs the crm.objects.owners.read scope; without it this
  * returns null and the deal is simply created unowned.
@@ -154,7 +208,7 @@ async function findOwnerId(token, email) {
   return null;
 }
 
-async function createDeal(token, contactId, { name, organisation, format }, fullText, ownerId) {
+async function createDeal(token, contactId, { name, organisation, format }, fullText, ownerId, pl) {
   const who = organisation || name;
   const what = format && format !== "Not sure yet — let's talk" ? format : "Speaking enquiry";
 
@@ -168,8 +222,8 @@ async function createDeal(token, contactId, { name, organisation, format }, full
   // to exist as an option in HubSpot before it will be accepted.
   const core = {
     dealname: `${who} — ${what}`,
-    pipeline: HS_PIPELINE,
-    dealstage: HS_STAGE,
+    ...(pl.pipeline ? { pipeline: pl.pipeline } : {}),
+    ...(pl.stage ? { dealstage: pl.stage } : {}),
     // amount deliberately left unset — the form collects a band, not a figure
     ...(description ? { description } : {}),
   };
@@ -354,14 +408,18 @@ module.exports = async function handler(req, res) {
         role: clean(body.role),
       });
 
-      const ownerId = await findOwnerId(hsToken, HS_OWNER_EMAIL);
+      const [ownerId, pl] = await Promise.all([
+        findOwnerId(hsToken, HS_OWNER_EMAIL),
+        resolvePipeline(hsToken),
+      ]);
 
       const dealId = await createDeal(
         hsToken,
         contactId,
         { name, organisation: clean(body.organisation), format: clean(body.format) },
         text,
-        ownerId
+        ownerId,
+        pl
       );
 
       try {
@@ -373,7 +431,14 @@ module.exports = async function handler(req, res) {
         console.error("HubSpot note skipped (deal", dealId, "has the detail):", noteErr.message);
       }
 
-      console.log(`HubSpot: contact ${contactId}, deal ${dealId} created for ${email}`);
+      // Say exactly what landed, so "is the owner/type/stage right?" is
+      // answerable from the logs without opening HubSpot.
+      console.log(
+        `HubSpot: deal ${dealId} for ${email} — contact=${contactId} ` +
+          `stage=${pl.label || pl.stage || "(default)"} ` +
+          `owner=${ownerId ? `${HS_OWNER_EMAIL} (${ownerId})` : "NOT SET"} ` +
+          `type=${HS_DEAL_TYPE || "(none)"}`
+      );
     } catch (err) {
       // Deliberately swallowed. The email already went out, so the enquiry is
       // safe; this is a CRM problem to fix, not a reason to fail the visitor.

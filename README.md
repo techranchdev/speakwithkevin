@@ -64,8 +64,8 @@ Set these in Vercel → Settings → Environment Variables:
 | `BOOKING_INBOX` | No | Defaults to `admin@techranchaustin.com` |
 | `BOOKING_FROM` | No | Must be a verified Resend sender. Defaults to `bookings@techranchaustin.com` |
 | `HUBSPOT_TOKEN` | No | Private app access token. Without it the HubSpot step is skipped and email still works |
-| `HUBSPOT_PIPELINE` | No | Defaults to `default` |
-| `HUBSPOT_DEAL_STAGE` | No | Defaults to `appointmentscheduled` |
+| `HUBSPOT_PIPELINE` | No | Pipeline **name** or id. Blank picks whichever contains the named stage |
+| `HUBSPOT_DEAL_STAGE` | No | Stage **name** or id. Defaults to `New Prospect` |
 | `HUBSPOT_OWNER_EMAIL` | No | Deal owner. Defaults to `sales@techranchaustin.com` |
 | `HUBSPOT_DEAL_TYPE` | No | Defaults to `Kevin Gig Booking` |
 
@@ -78,6 +78,12 @@ notes scope isn't offered on every HubSpot plan, so nothing depends on it. The
 deal `amount` is deliberately left blank; the form collects a budget band, not
 a figure.
 
+Pipelines and stages are addressed internally by id, and those ids are invisible
+in the HubSpot UI. So the config names them in plain English and the code
+resolves them at request time against `/crm/v3/pipelines/deals` — either the
+label or the raw id works. If the named stage can't be found, the log lists the
+stages that do exist in that pipeline, which is usually enough to spot a typo.
+
 Deals are assigned to the owner named by `HUBSPOT_OWNER_EMAIL` and tagged with
 the deal type in `HUBSPOT_DEAL_TYPE`. Two prerequisites:
 
@@ -88,6 +94,9 @@ the deal type in `HUBSPOT_DEAL_TYPE`. Two prerequisites:
 
 If either is missing the deal is still created, just without the owner or
 type, and the log line says which was rejected.
+
+Every successful create logs what was actually applied — stage, owner and
+type — so those can be verified from the Vercel logs without opening HubSpot.
 
 The private app needs five scopes: `crm.objects.contacts.read`,
 `crm.objects.contacts.write`, `crm.objects.deals.read`,
